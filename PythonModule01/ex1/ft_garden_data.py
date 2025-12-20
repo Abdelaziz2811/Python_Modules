@@ -1,10 +1,19 @@
 class Plant:
-    def __init__(self, name, height, age) -> None:
+    """
+    Represents a plant in the garden with basic attributes.
+    """
+    def __init__(self, name: str, height: int, age: int) -> None:
+        """
+        Initializes a new Plant.
+        """
         self.name = name
         self.height = height
         self.age = age
 
     def display_info(self) -> None:
+        """
+        Prints plant info
+        """
         print(f"{self.name}: {self.height}cm, {self.age} days old")
 
 

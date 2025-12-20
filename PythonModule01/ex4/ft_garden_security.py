@@ -1,11 +1,21 @@
 class SecurePlant:
-    def __init__(self, name, height, age) -> None:
+    """
+    Represents a secure plant with encapsulated data.
+    """
+    def __init__(self, name: str, height: int, age: int) -> None:
+        """
+        Initialize the plant with private attributes.
+        """
         self.name = name
         self.__height = height
         self.__age = age
         print(f"Plant created: {self.name}")
 
-    def set_height(self, height):
+    def set_height(self, height) -> None:
+        """
+        Sets the height safely after validation.
+        Reject if height is invalid
+        """
         if (height < 0):
             print(
                 f"\nInvalid operation attempted: height {height}cm [REJECTED]"
@@ -14,10 +24,15 @@ class SecurePlant:
             self.__height = height
             print(f"Height updated: {self.__height}cm [OK]")
 
-    def get_height(self):
+    def get_height(self) -> int:
+        """Returns the private height attributes."""
         return self.__height
 
-    def set_age(self, age):
+    def set_age(self, age) -> None:
+        """
+        Sets the age safely after validation.
+        Reject if age is invalid
+        """
         if (age < 0):
             print(f"\nInvalid operation attempted: age {age} days [REJECTED]"
                   "\nSecurity: Negative age rejected")
@@ -25,7 +40,8 @@ class SecurePlant:
             self.__age = age
             print(f"Age updated: {self.__age} days [OK]")
 
-    def get_age(self):
+    def get_age(self) -> int:
+        """Returns the private age attributes."""
         return self.__age
 
 
